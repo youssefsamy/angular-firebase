@@ -1,0 +1,42 @@
+#page-layout {
+    overflow-y: scroll;
+
+    .header {
+        background-color: #3e854e;
+        padding: 10px 0px;
+        color: white;
+
+        button {
+            border: none;
+            border-radius: 3px;
+            background-color: white;
+            padding: 3px 15px;
+            margin-left: 10px;
+        }
+
+        .dropdown-menu {
+            a {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .footer {
+        max-width: 1300px;
+        padding-top: 50px;
+        margin: auto;
+        padding-bottom: 50px;
+
+        .logo {
+            img {
+                width: 300px;
+            }
+        }
+
+        .contact {
+            img {
+                width: 150px;
+            }
+        }
+    }
+}

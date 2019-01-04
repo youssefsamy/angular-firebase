@@ -1,0 +1,37 @@
+<div id="page-layout" fxFlexFill>
+    <div class="header text-right">
+        <div class="container">
+            <span class="font-weight-bold"><span>{{'home.welcome' | translate}}</span> {{setting.loginInfo.displayName}}</span>
+            <button class="text-danger" (click)="logout()"><i class="fa fa-exclamation-circle text-danger mr-1"></i>{{'home.logout' |
+                translate}}
+            </button>
+
+            <button type="button" class="btn btn-danger dropdown-toggle text-danger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{setting.getStorage('lang', 'en')}}
+            </button>
+
+            <div class="dropdown-menu">
+                <a class="dropdown-item" (click)="setLanguage('en')">English</a>
+                <a class="dropdown-item" (click)="setLanguage('pt')">Portugese</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <router-outlet></router-outlet>
+
+
+    <div class="footer" fxLayoutAlign="space-between center">
+        <div class="logo">
+            <img src="assets/images/logo.png">
+        </div>
+
+        <div class="contact">
+            <div class="contactus text-right">
+                <h3>{{'common.contact_us' | translate}}: 0800 648 5060</h3>
+                <img src="assets/images/logo1.png">
+            </div>
+        </div>
+    </div>
+</div>

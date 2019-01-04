@@ -1,0 +1,42 @@
+#solicitation-modal {
+    .items {
+
+        .item {
+            margin: 10px 0px;
+            overflow: hidden;
+
+            .header {
+                background-color: #3e854e;
+                color: white;
+                border-radius: 5px;
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            .title {
+                .inner {
+                    background-color: #96989a;
+                    border-radius: 5px;
+                    border: 1px solid #727376;
+                    line-height: 30px;
+                    color: white;
+                }
+            }
+
+            .content {
+                .inner {
+                    border-radius: 5px;
+                    border: 1px solid #727376;
+                    line-height: 30px;
+                }
+            }
+
+            .col-6:first-child {
+                padding-right: 0;
+            }
+            .col-6:last-child {
+                padding-left: 0;
+            }
+        }
+    }
+}

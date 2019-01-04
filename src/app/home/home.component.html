@@ -1,0 +1,103 @@
+<div id="page-home" fxFlexFill>
+    <div class="header text-right">
+        <div class="container">
+            <span class="font-weight-bold"><span>{{'home.welcome' | translate}}</span> {{setting.loginInfo.displayName}}</span>
+            <button class="text-danger" (click)="logout()"><i class="fa fa-exclamation-circle text-danger mr-1"></i>{{'home.logout' |
+                translate}}
+            </button>
+
+            <button type="button" class="btn btn-danger dropdown-toggle text-danger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{setting.getStorage('lang', 'en')}}
+            </button>
+
+            <div class="dropdown-menu">
+                <a class="dropdown-item" (click)="setLanguage('en')">English</a>
+                <a class="dropdown-item" (click)="setLanguage('pt')">Portugese</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-wrapper">
+        <div class="container text-center">
+            <div class="title">
+                <h1 class="text-uppercase">{{'home.title' | translate}}</h1>
+            </div>
+
+            <div class="items-wrapper">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="item-wrapper">
+                            <div class="item" (click)="selectPage('manage_products')" [ngClass]="{selected: setting.selectedPage == 'manage_products'}">
+                                <img src="assets/images/item/register_product.png">
+                                <p>{{'home.manage_products' | translate}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="item-wrapper">
+                            <div class="item" (click)="selectPage('send_notifications')" [ngClass]="{selected: setting.selectedPage == 'send_notifications'}">
+                                <img src="assets/images/item/send_notification.png">
+                                <p>{{'home.send_notifications' | translate}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="item-wrapper">
+                            <div class="item" (click)="selectPage('manage_solicitations')" [ngClass]="{selected: setting.selectedPage == 'manage_solicitations'}">
+                                <img src="assets/images/item/manage_solicitation.png">
+                                <p>{{'home.manage_solicitations' | translate}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="item-wrapper">
+                            <div class="item" (click)="selectPage('grains_prices')" [ngClass]="{selected: setting.selectedPage == 'grains_prices'}">
+                                <img src="assets/images/item/beans_price.png">
+                                <p>{{'home.beans_prices' | translate}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="item-wrapper">
+                            <div class="item" (click)="selectPage('check_new_users')" [ngClass]="{selected: setting.selectedPage == 'check_new_users'}">
+                                <img src="assets/images/item/check_new_user.png">
+                                <p>{{'home.check_new_users' | translate}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="item-wrapper">
+                            <div class="item" (click)="selectPage('register_new_admin_users')" [ngClass]="{selected: setting.selectedPage == 'register_new_admin_users'}">
+                                <img src="assets/images/item/register_admin.png">
+                                <p>{{'home.register_new_admin_users' | translate}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="item-wrapper">
+                            <div class="item" (click)="selectPage('change_password')" [ngClass]="{selected: setting.selectedPage == 'change_password'}">
+                                <img src="assets/images/item/change_password.png">
+                                <p>{{'home.change_password' | translate}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer" fxLayoutAlign="space-between center">
+        <div class="logo">
+            <img src="assets/images/logo.png">
+        </div>
+
+        <div class="contact">
+            <div class="contactus text-right">
+                <h3>{{'common.contact_us' | translate}}: 0800 648 5060</h3>
+                <img src="assets/images/logo1.png">
+            </div>
+        </div>
+    </div>
+</div>

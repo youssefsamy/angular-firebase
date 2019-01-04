@@ -1,0 +1,59 @@
+#register-admin {
+    .form-wrapper {
+
+        max-width: 700px;
+        margin: auto;
+
+        .content {
+            margin-top: 150px;
+            border: 1px solid #e1e3e6;
+            padding: 20px;
+            border-radius: 10px;
+
+            .form {
+                .item-wrapper {
+                    margin-bottom: 15px;
+                    position: relative;
+                    width: 100%;
+
+                    &.has-error {
+                        .error {
+                            display: inline-block;
+                            color: red;
+                        }
+                    }
+
+                    .error {
+                        display: none;
+                    }
+
+                    input {
+                        width: 100%;
+                        border: 1px solid #e1e3e6;
+                        font-size: 20px;
+                        line-height: 50px;
+                        padding-left: 10px;
+                        border-radius: 5px;
+                    }
+
+                    button {
+                        border: none;
+                        padding: 0px 15px;
+                        font-size: 18px;
+                        height: 45px;
+                        border-radius: 5px;
+                        color: white;
+                        font-weight: bold;
+
+                    }
+                }
+
+                label {
+                    font-size: 20px;
+                    line-height: 50px;
+                }
+            }
+        }
+
+    }
+}

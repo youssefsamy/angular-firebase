@@ -1,0 +1,35 @@
+<div id="check-new-user">
+    <div class="page-title text-center">
+        <h1>{{'home.check_new_users' | translate}}</h1>
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <div class="search-data">
+                <p><i>{{'check_new_user.select_your_research_date' | translate}}</i></p>
+                <input type="date" [placeholder]="'check_new_user.start_date' | translate" (change)="doFilter()" [(ngModel)]="startDate">
+                <input type="date" [placeholder]="'check_new_user.end_date' | translate" (change)="doFilter()" [(ngModel)]="endDate">
+            </div>
+
+            <div class="table-wrapper">
+
+                <table datatable [dtOptions]="dtOptions" class="table row-border hover spacing-table text-center" *ngIf="loaded">
+                    <thead>
+                    <tr>
+                        <th>{{'check_new_user.date' | translate}}</th>
+                        <th>{{'check_new_user.id' | translate}}</th>
+                        <th>{{'check_new_user.phone_number' | translate}}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let user of users; let i = index">
+                        <td>{{user.date | date: 'yyyy-MM-dd'}}</td>
+                        <td>{{user.id}}</td>
+                        <td>{{user.phoneNumber}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

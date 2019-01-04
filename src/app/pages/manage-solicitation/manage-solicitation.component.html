@@ -1,0 +1,37 @@
+<div id="manage-solicitation">
+    <div class="page-title text-center">
+        <h1>{{'home.manage_solicitations' | translate}}</h1>
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <div class="download text-right">
+                <button (click)="download_csv()"><i class="fa fa-arrow-down"></i></button>
+            </div>
+            <table class="table row-border hover spacing-table text-center">
+                <thead>
+                <tr>
+                    <th>{{'manage_solicitation.date' | translate}}</th>
+                    <th>{{'manage_solicitation.id' | translate}}</th>
+                    <th>{{'manage_solicitation.phone_number' | translate}}</th>
+                    <th>{{'manage_solicitation.product' | translate}}</th>
+                    <th>{{'manage_solicitation.amount' | translate}}</th>
+                    <th>{{'manage_solicitation.status' | translate}}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let item of solicitations; let i = index" (click)="showDetail(i)">
+                    <td>{{item.created | date:'dd/MM/yyyy'}}</td>
+                    <td>{{item.userId}}</td>
+                    <td>{{item.userPhone}}</td>
+                    <td>{{item.productName}}</td>
+                    <td>{{item.loanAmount | currency:'BRL':'pt_BR'}}</td>
+                    <td><i>{{item.status}}</i></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <a id="link" target="_self" download="solicitations.csv" style="display: none;">Link</a>
+</div>

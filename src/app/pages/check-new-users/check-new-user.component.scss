@@ -1,0 +1,30 @@
+#check-new-user {
+    .container {
+        .content {
+            margin-top: 50px;
+            border: 1px solid #e1e3e6;
+            padding: 20px 50px;
+            border-radius: 10px;
+
+            .table-wrapper {
+                padding-top: 30px;
+
+                .table {
+                    border: 1px solid #DDE1E5;
+
+                    thead {
+                        background-color: #96989A;
+                    }
+                }
+            }
+        }
+
+        input {
+            border: 1px solid #e1e3e6;
+            font-size: 18px;
+            line-height: 30px;
+            padding-left: 10px;
+            border-radius: 5px;
+        }
+    }
+}

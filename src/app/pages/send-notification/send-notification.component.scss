@@ -1,0 +1,79 @@
+#send-notification {
+    .container {
+
+        .content {
+            margin-top: 30px;
+            border: 1px solid #e1e3e6;
+            padding: 20px;
+            border-radius: 10px;
+
+            .form {
+                .item-wrapper {
+                    margin-bottom: 15px;
+                    position: relative;
+                    width: 100%;
+
+                    &.has-error {
+                        .error {
+                            display: inline-block;
+                            color: red;
+                        }
+                    }
+
+                    .error {
+                        display: none;
+                    }
+
+                    input, textarea, select {
+                        width: 100%;
+                        border: 1px solid #e1e3e6;
+                        font-size: 18px;
+                        line-height: 35px;
+                        padding-left: 10px;
+                        border-radius: 3px;
+                    }
+
+                    textarea {
+                        height: 150px;
+                    }
+                    select {
+                        width: 200px;
+                        height: 40px;
+                    }
+
+                    button {
+                        border: none;
+                        padding: 0px 15px;
+                        font-size: 18px;
+                        height: 45px;
+                        border-radius: 5px;
+                        color: white;
+                        font-weight: bold;
+
+                    }
+
+                    &.client {
+                        .phone {
+                            padding-left: 60px;
+                            label {
+                                line-height: 20px;
+                                font-size: 16px;
+                            }
+                            input {
+                                width: auto;
+                                font-size: 16px;
+                                border: none;
+                            }
+                        }
+                    }
+                }
+
+                label {
+                    font-size: 20px;
+                    line-height: 50px;
+                }
+            }
+        }
+
+    }
+}

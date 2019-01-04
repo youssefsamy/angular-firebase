@@ -1,0 +1,34 @@
+#manage-solicitation {
+    .container {
+        .content {
+            padding-top: 50px;
+
+            .download {
+                margin-bottom: 10px;
+
+                button {
+                    background-color: #e18c38;
+                    border: none;
+                    border-radius: 2px;
+                    padding: 10px 15px;
+
+                    i {
+                        font-size: 20px;
+                        color: white;
+                    }
+                }
+            }
+
+            .table {
+                border: 1px solid #DDE1E5;
+                thead {
+                    background-color: #96989A;
+                }
+
+                tr {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

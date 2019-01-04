@@ -1,0 +1,66 @@
+<div id="bean-price">
+    <div class="page-title text-center">
+        <h1>{{'home.beans_prices' | translate}}</h1>
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <div class="row">
+                <div class="col-md-6" *ngFor="let item of grainsPrices; let i = index">
+                    <div class="item mt-2">
+                        <table class="text-center" [ngClass]="{yellow: i == 0 || i == 3, green: i == 1 || i == 2}">
+                            <tr>
+                                <th colspan="2" class="text-center text-white">
+                                    <div *ngIf="item.data.product == 'SOYBEANS'"><i>{{'beans_price.soybeans' | translate}}</i></div>
+                                    <div *ngIf="item.data.product == 'CORN'"><i>{{'beans_price.corn' | translate}}</i></div>
+                                    <div *ngIf="item.data.product == 'WHEAT'"><i>{{'beans_price.wheat' | translate}}</i></div>
+                                    <div *ngIf="item.data.product == 'RICE'"><i>{{'beans_price.rice' | translate}}</i></div>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="colored">{{'beans_price.price_per_bag' | translate}}</div>
+                                </td>
+                                <td>
+                                    <div class="editable" (dblclick)="edit($event)">
+                                        <input [(ngModel)]="item.data.price" (keyup)="keyUp($event)" currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left' }">
+                                        <span>{{item.data.price | currency:'BRL'}}</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div class="black">{{'beans_price.price_per_bag' | translate}}</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="light_black">{{'beans_price.owned_area' | translate}}</div>
+                                </td>
+                                <td>
+                                    <div class="light_black">{{'beans_price.leased_area' | translate}}</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="editable" (dblclick)="edit($event)">
+                                        <input [(ngModel)]="item.data.ownedArea" type="number" (keyup)="keyUp($event)">
+                                        <span>{{item.data.ownedArea}}</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="editable" (dblclick)="edit($event)">
+                                        <input [(ngModel)]="item.data.leasedArea" type="number" (keyup)="keyUp($event)">
+                                        <span>{{item.data.leasedArea}}</span>
+                                    </div>
+                                </td>
+                            </tr>
+
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

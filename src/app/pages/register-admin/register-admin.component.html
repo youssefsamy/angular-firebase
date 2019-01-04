@@ -1,0 +1,58 @@
+<div id="register-admin">
+    <div class="page-title text-center">
+        <h1>{{'home.register_new_admin_users' | translate}}</h1>
+    </div>
+
+    <div class="form-wrapper">
+        <div class="content">
+            <form [formGroup]="form" class="form">
+                <div class="row">
+                    <div class="col-4 text-right">
+                        <label>{{'register_admin.name' | translate}}:</label>
+                    </div>
+                    <div class="col-8">
+                        <div class="item-wrapper" [ngClass]="validate.displayFieldCss(form, 'name')">
+                            <input [placeholder]="'register_admin.add_user_name' | translate"
+                                   name="name" [(ngModel)]="info.name"
+                                   formControlName="name">
+                            <span class="error">Informe um nome</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-4 text-right">
+                        <label>{{'register_admin.email' | translate}}</label>
+                    </div>
+                    <div class="col-8">
+                        <div class="item-wrapper" [ngClass]="validate.displayFieldCss(form, 'email')">
+                            <input [placeholder]="'register_admin.add_email' | translate"
+                                   name="email" [(ngModel)]="info.email"
+                                   formControlName="email">
+                            <span class="error">Innforme um e-mail</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-4 text-right">
+                        <label>{{'register_admin.password' | translate}}</label>
+                    </div>
+                    <div class="col-8">
+                        <div class="item-wrapper" [ngClass]="validate.displayFieldCss(form, 'password')">
+                            <input [placeholder]="'register_admin.password' | translate"
+                                   name="new_password" [(ngModel)]="info.password"
+                                   formControlName="password" type="password">
+                            <span class="error">Informe uma senha</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-wrapper text-right">
+                    <button class="submit-btn bg-success" (click)="send()">{{'common.send' | translate}}</button>
+                    <button class="submit-btn bg-danger" (click)="cancel()">{{'common.cancel' | translate}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<div id="manage-product">
+    <div class="page-title text-center">
+        <h1>{{'home.manage_products' | translate}}</h1>
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <table class="table row-border hover spacing-table text-center">
+                <thead>
+                <tr>
+                    <th>{{'manage_product.name' | translate}}</th>
+                    <th>{{'manage_product.starting' | translate}}</th>
+                    <th>{{'manage_product.expiration' | translate}}</th>
+                    <th>{{'manage_product.action' | translate}}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let item of products; let i = index">
+                    <td>{{item.data.name}}</td>
+                    <td>{{item.data.startingDate | date:'dd/MM/yyyy'}}</td>
+                    <td>{{item.data.expirationDate | date:'dd/MM/yyyy'}}</td>
+                    <td><i class="fa fa-pencil" (click)="editProduct(i)"></i></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div class="add-btn-wrapper text-right">
+                <button class="bg-success" (click)="addProduct()">{{'manage_product.add_new_product' | translate}}</button>
+            </div>
+        </div>
+    </div>
+</div>

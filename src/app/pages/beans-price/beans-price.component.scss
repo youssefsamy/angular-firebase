@@ -1,0 +1,66 @@
+#bean-price {
+    .container {
+        .content {
+            padding-top: 50px;
+
+            .item {
+                table {
+                    width: 100%;
+
+                    &.yellow {
+                        th {
+                            background-color: #e18c38;
+                        }
+
+                        .colored {
+                            color: #e18c38;
+                        }
+                    }
+
+                    &.green {
+                        th {
+                            background-color: #3e854e;
+                        }
+
+                        .colored {
+                            color: #3e854e;
+                        }
+                    }
+
+                    td, th {
+                        padding: 0;
+
+                        > div {
+                            padding: 5px 10px;
+                            border-radius: 5px;
+                            border: 1px solid #727376;
+                            font-size: 20px;
+                        }
+
+                        .editable {
+                            input {
+                                display: none;
+                                width: 150px;
+                            }
+                        }
+
+                        i {
+                            font-size: 22px;
+                        }
+                    }
+
+                    .black {
+                        background-color: #727376;
+                        color: white;
+                    }
+
+                    .light_black {
+                        background-color: #96989a;
+                        color: white;
+                    }
+
+                }
+            }
+        }
+    }
+}

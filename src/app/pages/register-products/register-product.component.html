@@ -1,0 +1,180 @@
+<div id="register-product">
+    <div class="page-title text-center">
+        <h1>{{setting.isAddNewProduct? ('home.add_product' | translate) : ('home.edit_product' | translate)}}</h1>
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <form [formGroup]="form" class="form">
+                <div class="row">
+
+                    <!--  product name -->
+                    <div class="col-md-2 text-right">
+                        <label>{{'register_product.product_name' | translate}}</label>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="item-wrapper" [ngClass]="validate.displayFieldCss(form, 'name')">
+                            <input name="name" [(ngModel)]="info.name" *ngIf="setting.isAddNewProduct"
+                                   formControlName="name">
+                            <input name="name" [(ngModel)]="info.name" *ngIf="!setting.isAddNewProduct"
+                                   formControlName="name" [attr.disabled]="false">
+                        </div>
+                    </div>
+
+
+                    <!--  monthly charges -->
+                    <div class="col-md-2 text-right">
+                        <label>{{'register_product.monthly_charges' | translate}}</label>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="item-wrapper" [ngClass]="validate.displayFieldCss(form, 'monthlyCharges')">
+                            <input name="monthlyCharges" [(ngModel)]="info.monthlyCharges"
+                                   formControlName="monthlyCharges" type="number">
+                        </div>
+                    </div>
+
+                    <!--  iof -->
+                    <div class="col-md-1 text-right">
+                        <label>{{'register_product.iof' | translate}}</label>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="item-wrapper" [ngClass]="validate.displayFieldCss(form, 'iof')">
+                            <input name="iof" [(ngModel)]="info.iof"
+                                   formControlName="iof" type="number">
+                        </div>
+                    </div>
+
+
+                    <!--  additional iof -->
+                    <div class="col-md-3 text-right">
+                        <label>{{'register_product.additional_iof' | translate}}</label>
+                    </div>
+
+                    <div class="col-md-2">
+                        <div class="item-wrapper" [ngClass]="validate.displayFieldCss(form, 'iofAdditional')">
+                            <input name="iofAdditional" [(ngModel)]="info.iofAdditional"
+                                   formControlName="iofAdditional" type="number">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+
+                    <!--  tlc regular -->
+                    <div class="col-md-2 text-right">
+                        <label>{{'register_product.tlc_regular' | translate}}</label>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="item-wrapper" [ngClass]="validate.displayFieldCss(form, 'tlcRegular')">
+                            <input name="tlcRegular" [(ngModel)]="info.tlcRegular"
+                                   formControlName="tlcRegular" type="number">
+                        </div>
+                    </div>
+
+                    <!--  minimum amount for loan -->
+                    <div class="col-md-5 text-right">
+                        <label>{{'register_product.minimum_amount_for_loan' | translate}}</label>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="item-wrapper" [ngClass]="validate.displayFieldCss(form, 'loanMinimum')">
+                            <input name="loanMinimum" [(ngModel)]="info.loanMinimum"
+                                   formControlName="loanMinimum" type="number">
+                        </div>
+                    </div>
+
+                    <!--  tlc miniumum -->
+                    <div class="col-md-2 text-right">
+                        <label>{{'register_product.tlc_minimum' | translate}}</label>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="item-wrapper" [ngClass]="validate.displayFieldCss(form, 'tlcMinimum')">
+                            <input name="tlcMinimum" [(ngModel)]="info.tlcMinimum"
+                                   formControlName="tlcMinimum" type="number">
+                        </div>
+                    </div>
+
+                    <!--  maximum amount for loan -->
+                    <div class="col-md-5 text-right">
+                        <label>{{'register_product.maximum_amount_for_loan' | translate}}</label>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="item-wrapper" [ngClass]="validate.displayFieldCss(form, 'loanMaximum')">
+                            <input name="loanMaximum" [(ngModel)]="info.loanMaximum"
+                                   formControlName="loanMaximum" type="number">
+                        </div>
+                    </div>
+
+
+                    <!--  tlc maximum -->
+                    <div class="col-md-2 text-right">
+                        <label>{{'register_product.tlc_maximum' | translate}}</label>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="item-wrapper" [ngClass]="validate.displayFieldCss(form, 'tlcMaximum')">
+                            <input name="tlcMaximum" [(ngModel)]="info.tlcMaximum"
+                                   formControlName="tlcMaximum" type="number">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row mt-3">
+
+                    <!--  maximum amount of days for loan release -->
+                    <div class="col-md-9 text-right">
+                        <label>{{'register_product.maximum_amount_of_days_for_loan_release' | translate}}</label>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="item-wrapper" [ngClass]="validate.displayFieldCss(form, 'daysToRelease')">
+                            <input name="daysToRelease" [(ngModel)]="info.daysToRelease"
+                                   formControlName="daysToRelease" type="number">
+                        </div>
+                    </div>
+
+                    <!-- minimum amount of months for loan payment  -->
+                    <div class="col-md-9 text-right">
+                        <label>{{'register_product.minimum_amount_of_months_for_loan_payment' | translate}}</label>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="item-wrapper" [ngClass]="validate.displayFieldCss(form, 'monthsToPayment')">
+                            <input name="monthsToPayment" [(ngModel)]="info.monthsToPayment"
+                                   formControlName="monthsToPayment" type="number">
+                        </div>
+                    </div>
+
+
+                    <!--  starting date and hour to release  -->
+                    <div class="col-md-9 text-right">
+                        <label>{{'register_product.starting_date_and_hour_to_release' | translate}}</label>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="item-wrapper" [ngClass]="validate.displayFieldCss(form, 'startingDate')">
+                            <input [(ngModel)]="info.startingDate" formControlName="startingDate" [owlDateTime]="startingDate" [owlDateTimeTrigger]="startingDate" />
+                            <owl-date-time pickerType="both" #startingDate></owl-date-time>
+                        </div>
+                    </div>
+
+                    <!--  expiration date and hour -->
+                    <div class="col-md-9 text-right">
+                        <label>{{'register_product.expiration_date_and_hour' | translate}}</label>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="item-wrapper" [ngClass]="validate.displayFieldCss(form, 'expirationDate')">
+                            <input [(ngModel)]="info.expirationDate" formControlName="expirationDate" [owlDateTime]="expirationDate" [owlDateTimeTrigger]="expirationDate" />
+
+                            <owl-date-time #expirationDate></owl-date-time>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-wrapper text-right mt-3">
+                    <button class="submit-btn bg-success" (click)="save()">{{'common.save' | translate}}</button>
+                    <button class="submit-btn bg-danger" (click)="cancel()">{{'common.cancel' | translate}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

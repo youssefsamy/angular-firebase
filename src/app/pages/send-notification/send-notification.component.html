@@ -1,0 +1,63 @@
+<div id="send-notification">
+    <div class="page-title text-center">
+        <h1>{{'home.send_notifications' | translate}}</h1>
+    </div>
+
+    <div class="main-wrapper">
+        <div class="container">
+            <div class="content">
+                <form [formGroup]="form" class="form">
+                    <label class="title">{{'send_notification.write_your_message_here' | translate}}</label>
+                    <div class="item-wrapper" [ngClass]="validate.displayFieldCss(form, 'title')">
+                        <input [placeholder]="'send_notification.title' | translate" name="username"
+                               [(ngModel)]="info.title"
+                               formControlName="title">
+                        <span class="error">title required</span>
+                    </div>
+                    <div class="item-wrapper" [ngClass]="validate.displayFieldCss(form, 'message')">
+                        <textarea
+                                [placeholder]="('send_notification.write_your_message_here' | translate) + '(' + ('send_notification.up_to_200_characters' | translate) + ')'"
+                                name="password" [(ngModel)]="info.message"
+                                formControlName="message" type="password"></textarea>
+                        <span class="error">message required</span>
+                    </div>
+
+                    <div class="item-wrapper">
+                        <mat-radio-group fxLayoutAlign="space-between center" [(ngModel)]="selectedUser"
+                                         name="selectedUser" formControlName="selectedUser" (change)="selectChanged()">
+                            <mat-radio-button value="all" class="mr-2">{{'send_notification.send_to_all_users' |
+                                translate}}
+                            </mat-radio-button>
+                            <mat-radio-button value="ios" class="mr-2">{{'send_notification.send_to_ios_users' |
+                                translate}}
+                            </mat-radio-button>
+                            <mat-radio-button value="android" class="mr-2">{{'send_notification.send_to_android_users' |
+                                translate}}
+                            </mat-radio-button>
+                            <mat-radio-button value="single" class="mr-2">{{'send_notification.send_to_single_user' |
+                                translate}}
+                            </mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+
+                    <div class="item-wrapper client" *ngIf="selectedUser == 'single'">
+                        <label class="mr-2 mb-0">{{'send_notification.client' | translate}}</label>
+                        <select [(ngModel)]="selectedIndex" formControlName="selectedIndex">
+                            <option *ngFor="let user of users; let i = index" [value]="i">ID:{{user.id}}</option>
+                        </select><br>
+                        <div *ngIf="selectedIndex != -1" class="phone">
+                            <label><i>{{'common.phone' | translate}}:</i></label>
+                            <input mask="(00) 00000.0000" [value]="users[selectedIndex].phoneNumber" readonly class="ml-2">
+                        </div>
+                    </div>
+
+                    <div class="item-wrapper text-right">
+                        <!--<button class="submit-btn bg-warning" (click)="login()">{{'common.save' | translate}}</button>-->
+                        <button class="submit-btn bg-success" (click)="send()">{{'common.send' | translate}}</button>
+                        <button class="submit-btn bg-danger" (click)="cancel()">{{'common.cancel' | translate}}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
